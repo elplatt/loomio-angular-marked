@@ -1,0 +1,93 @@
+{
+  "_args": [
+    [
+      "loomio-angular-marked@1.2.6",
+      "/Users/elplatt/loomio/client"
+    ]
+  ],
+  "_from": "loomio-angular-marked@1.2.6",
+  "_id": "loomio-angular-marked@1.2.6",
+  "_inBundle": false,
+  "_integrity": "sha512-kG5NdMSvtj6KB72+SVoPOLEEbOBlA2e/rZ18brAgmviX3W0n1h6w67RAHpTDYb9SPKzUBd23BJcxsgTZ/yMRAg==",
+  "_location": "/loomio-angular-marked",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "loomio-angular-marked@1.2.6",
+    "name": "loomio-angular-marked",
+    "escapedName": "loomio-angular-marked",
+    "rawSpec": "1.2.6",
+    "saveSpec": null,
+    "fetchSpec": "1.2.6"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/loomio-angular-marked/-/loomio-angular-marked-1.2.6.tgz",
+  "_spec": "1.2.6",
+  "_where": "/Users/elplatt/loomio/client",
+  "author": {
+    "name": "J. Harshbarger"
+  },
+  "bugs": {
+    "url": "https://github.com/Hypercubed/angular-marked/issues"
+  },
+  "dependencies": {
+    "marked": "^0.3.17",
+    "marked-iframe": "0.1.1"
+  },
+  "description": "AngularJS Markdown using marked.",
+  "devDependencies": {
+    "browserify": "^13.0.1",
+    "grunt": "^1.0.1",
+    "grunt-gh-pages": "^1.1.0",
+    "grunt-ngdocs": "^0.2.10",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.1",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "load-grunt-tasks": "^3.5.0",
+    "uglifyjs": "^2.4.10",
+    "xo": "^0.16.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "homepage": "https://github.com/Hypercubed/angular-marked",
+  "keywords": [
+    "marked",
+    "markdown"
+  ],
+  "license": "MIT",
+  "main": "lib/angular-marked.js",
+  "name": "loomio-angular-marked",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Hypercubed/angular-marked.git"
+  },
+  "scripts": {
+    "browserify": "browserify lib/angular-marked.js -s angular-marked -o dist/angular-marked.js -x marked",
+    "build": "npm run compile && npm run docs",
+    "check": "npm run lint && npm run test",
+    "compile": "npm run browserify && npm run uglify",
+    "docs": "grunt ngdocs",
+    "lint": "xo lib/*.js test/**/*.js",
+    "postpublish": "grunt deploy",
+    "prepublish": "npm run compile",
+    "test": "npm run compile && karma start --single-run --browsers PhantomJS",
+    "uglify": "uglifyjs dist/angular-marked.js -o dist/angular-marked.min.js"
+  },
+  "version": "1.2.6",
+  "xo": {
+    "space": 2,
+    "envs": [
+      "browser"
+    ],
+    "ignores": [
+      "docs/**",
+      "dist/**"
+    ]
+  }
+}
